@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla: Auditoría de Autenticidad de Mi Tarea</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        textarea, select {
+            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        textarea:focus, select:focus {
+            border-color: #0d9488; /* Teal-600 */
+            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.2);
+            outline: none;
+        }
+        /* Estilos que se aplicarán solo al imprimir */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .container {
+                max-width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .printable-content {
+                box-shadow: none !important;
+                border: 1px solid #ccc !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+        <!-- Header -->
+        <header class="text-center mb-10 no-print">
+            <h1 class="text-3xl md:text-4xl font-bold text-teal-800">Plantilla: Auditoría de Autenticidad de Mi Tarea</h1>
+            <p class="text-md md:text-lg text-gray-600 mt-2">Evalúa una tarea de tu propia asignatura usando las 5 dimensiones de Gulikers.</p>
+        </header>
+
+        <div id="content-to-print">
+            <!-- Step 1: Describe your task -->
+            <div class="bg-white p-6 rounded-2xl shadow-lg mb-8 printable-content">
+                <h2 class="text-2xl font-bold text-blue-800 mb-4">Paso 1: Describe tu Tarea de Evaluación</h2>
+                <p class="text-gray-600 mb-4">Describe aquí una tarea de evaluación que utilices actualmente en una de tus asignaturas o una que conozcas muy bien.</p>
+                <div id="step1-container">
+                    <label for="task-description" class="sr-only">Descripción de la Tarea</label>
+                    <textarea id="task-description" class="w-full h-40 p-3 border border-gray-300 rounded-md" placeholder="Ej: Examen final de opción múltiple para el curso de Biología Celular que cubre los temas de la unidad 3 y 4..."></textarea>
+                </div>
+            </div>
+
+            <!-- Step 2: Analysis Template -->
+            <div class="bg-white p-6 rounded-2xl shadow-lg space-y-8 printable-content">
+                <h2 class="text-2xl font-bold text-center">Paso 2: Analiza tu Tarea</h2>
+
+                <!-- Dimension 1 -->
+                <div class="dimension-container">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">1. Dimensión: La Tarea</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="dim1-rating" class="font-semibold block mb-2 text-sm">Calificación de Autenticidad:</label>
+                            <select id="dim1-rating" class="w-full p-2 border border-gray-300 rounded-md">
+                                <option value="Bajo">Bajo</option>
+                                <option value="Medio">Medio</option>
+                                <option value="Alto">Alto</option>
+                            </select>
+                        </div>
+                        <div>
+                             <label for="dim1-analysis" class="font-semibold block mb-2 text-sm">Análisis Crítico:</label>
+                             <textarea id="dim1-analysis" class="w-full h-24 p-2 border border-gray-300 rounded-md" placeholder="Justifica tu calificación..."></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dimension 2 -->
+                 <div class="dimension-container">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">2. Dimensión: El Contexto Físico</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="dim2-rating" class="font-semibold block mb-2 text-sm">Calificación de Autenticidad:</label>
+                            <select id="dim2-rating" class="w-full p-2 border border-gray-300 rounded-md">
+                                <option value="Bajo">Bajo</option>
+                                <option value="Medio">Medio</option>
+                                <option value="Alto">Alto</option>
+                            </select>
+                        </div>
+                        <div>
+                             <label for="dim2-analysis" class="font-semibold block mb-2 text-sm">Análisis Crítico:</label>
+                             <textarea id="dim2-analysis" class="w-full h-24 p-2 border border-gray-300 rounded-md" placeholder="Justifica tu calificación..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dimension 3 -->
+                <div class="dimension-container">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">3. Dimensión: El Contexto Social</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="dim3-rating" class="font-semibold block mb-2 text-sm">Calificación de Autenticidad:</label>
+                            <select id="dim3-rating" class="w-full p-2 border border-gray-300 rounded-md">
+                                <option value="Bajo">Bajo</option>
+                                <option value="Medio">Medio</option>
+                                <option value="Alto">Alto</option>
+                            </select>
+                        </div>
+                        <div>
+                             <label for="dim3-analysis" class="font-semibold block mb-2 text-sm">Análisis Crítico:</label>
+                             <textarea id="dim3-analysis" class="w-full h-24 p-2 border border-gray-300 rounded-md" placeholder="Justifica tu calificación..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dimension 4 -->
+                <div class="dimension-container">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">4. Dimensión: La Forma del Producto</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="dim4-rating" class="font-semibold block mb-2 text-sm">Calificación de Autenticidad:</label>
+                            <select id="dim4-rating" class="w-full p-2 border border-gray-300 rounded-md">
+                                <option value="Bajo">Bajo</option>
+                                <option value="Medio">Medio</option>
+                                <option value="Alto">Alto</option>
+                            </select>
+                        </div>
+                        <div>
+                             <label for="dim4-analysis" class="font-semibold block mb-2 text-sm">Análisis Crítico:</label>
+                             <textarea id="dim4-analysis" class="w-full h-24 p-2 border border-gray-300 rounded-md" placeholder="Justifica tu calificación..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dimension 5 -->
+                <div class="dimension-container">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">5. Dimensión: Los Criterios y Estándares</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="dim5-rating" class="font-semibold block mb-2 text-sm">Calificación de Autenticidad:</label>
+                            <select id="dim5-rating" class="w-full p-2 border border-gray-300 rounded-md">
+                                <option value="Bajo">Bajo</option>
+                                <option value="Medio">Medio</option>
+                                <option value="Alto">Alto</option>
+                            </select>
+                        </div>
+                        <div>
+                             <label for="dim5-analysis" class="font-semibold block mb-2 text-sm">Análisis Crítico:</label>
+                             <textarea id="dim5-analysis" class="w-full h-24 p-2 border border-gray-300 rounded-md" placeholder="Justifica tu calificación..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Print/Export Button -->
+        <div class="mt-8 text-center no-print">
+            <button id="print-pdf-button" class="bg-teal-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-teal-700 transition-colors shadow-md">
+                Preparar para Imprimir / Guardar como PDF
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function createPrintableDiv(content, isBold = false) {
+            let div = document.createElement('div');
+            div.classList.add('printable-text');
+            div.style.whiteSpace = 'pre-wrap';
+            div.style.padding = '0.5rem';
+            div.style.border = '1px solid #e5e7eb';
+            div.style.borderRadius = '0.375rem';
+            div.style.minHeight = '2rem';
+            if (isBold) {
+                div.style.fontWeight = '600';
+            }
+            div.textContent = content || '[Sin respuesta]';
+            return div;
+        }
+
+        function prepareForPrint() {
+            // Manejar la descripción de la tarea
+            const taskTextarea = document.getElementById('task-description');
+            const taskDiv = createPrintableDiv(taskTextarea.value);
+            taskTextarea.style.display = 'none';
+            document.getElementById('step1-container').appendChild(taskDiv);
+
+            // Manejar las 5 dimensiones
+            document.querySelectorAll('.dimension-container').forEach(container => {
+                const select = container.querySelector('select');
+                const textarea = container.querySelector('textarea');
+                
+                const ratingDiv = createPrintableDiv(`Calificación: ${select.value}`, true);
+                const analysisDiv = createPrintableDiv(textarea.value);
+
+                select.style.display = 'none';
+                textarea.style.display = 'none';
+
+                // Añadir los divs creados dentro del contenedor correcto para mantener el orden
+                select.parentNode.appendChild(ratingDiv);
+                textarea.parentNode.appendChild(analysisDiv);
+            });
+        }
+
+        function revertAfterPrint() {
+            // Mostrar de nuevo los inputs
+            document.getElementById('task-description').style.display = 'block';
+            document.querySelectorAll('.dimension-container').forEach(container => {
+                container.querySelector('select').style.display = 'block';
+                container.querySelector('textarea').style.display = 'block';
+            });
+            // Eliminar los divs temporales
+            document.querySelectorAll('.printable-text').forEach(div => div.remove());
+        }
+
+        document.getElementById('print-pdf-button').addEventListener('click', function() {
+            prepareForPrint();
+            setTimeout(() => window.print(), 100);
+        });
+        
+        window.addEventListener('afterprint', revertAfterPrint);
+
+    </script>
+</body>
+</html>
